@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יצירת קמפיין</title>
+    <link rel="stylesheet" href="../style/create_campaign.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../html/main.html">ראשי</a></li>
+                <li><a href="../html/banner_editor.html">עורך באנרים</a></li>
+                <li><a href="../html/marketing_editor.html">עורך דף שיווקי</a></li>
+                <li><a href="../html/landing_page_editor.html">עורך דף נחיתה</a></li>
+                <li><a href="../html/create_campaign.html">יצירת קמפיין</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>יצירת קמפיין חדש</h1>
+        <form id="campaignForm">
+            <label for="title">כותרת קמפיין:</label>
+            <input type="text" id="title" required>
+            
+            <label for="description">תיאור קמפיין:</label>
+            <textarea id="description" required></textarea>
+            
+            <label for="category">קטגוריה:</label>
+            <select id="category" required>
+                <option value="banner">באנר</option>
+                <option value="project">פרויקט</option>
+                <option value="marketing">דף שיווקי</option>
+                <option value="landing">דף נחיתה</option>
+            </select>
+            
+            <label for="imageUpload">בחר תמונה:</label>
+            <input type="file" id="imageUpload" accept="image/*" required>
+            
+            <button type="submit">שמור קמפיין</button>
+        </form>
+
+        <h2>קמפיינים קיימים</h2>
+        <table id="campaignTable">
+            <thead>
+                <tr>
+                    <th>קטגוריה</th>
+                    <th>תמונה</th>
+                    <th>כותרת</th>
+                    <th>תיאור</th>
+                </tr>
+            </thead>
+            <tbody id="campaignTableBody">
+                <!-- קמפיינים יתווספו כאן -->
+            </tbody>
+        </table>
+    </main>
+    <script src="../script/create_campaign.js"></script>
+</body>
+</html>

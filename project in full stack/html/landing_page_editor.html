@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עורך דפי נחיתה</title>
+    <link rel="stylesheet" href="../style/landing_page_editor.css">
+</head>
+<body>
+    <header>
+        <h1>עורך דפי נחיתה</h1>
+        <nav>
+            <ul>
+                <li><a href="/html/main.html">ראשי</a></li>
+                <li><a href="../html/banner_editor.html">עורך באנרים</a></li>
+                <li><a href="../html/marketing_editor.html">עורך דף שיווקי</a></li>
+                <li><a href="../html/landing_page_editor.html">עורך דף נחיתה</a></li>
+                <li><a href="../html/create_campaign.html">יצירת קמפיין</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="landingPageForm">
+            <label for="pageTitle">כותרת הדף:</label>
+            <input type="text" id="pageTitle" name="pageTitle" required>
+            
+            <label for="pageSubtitle">כותרת משנה:</label>
+            <input type="text" id="pageSubtitle" name="pageSubtitle">
+            
+            <label for="pageContent">תוכן הדף:</label>
+            <textarea id="pageContent" name="pageContent" required></textarea>
+            
+            <label for="ctaText">טקסט לקריאה לפעולה:</label>
+            <input type="text" id="ctaText" name="ctaText" required>
+            
+            <label for="ctaLink">קישור לקריאה לפעולה:</label>
+            <input type="url" id="ctaLink" name="ctaLink" required>
+            
+            <label for="backgroundImage">כתובת תמונה רקע:</label>
+            <input type="url" id="backgroundImage" name="backgroundImage" required>
+            
+            <label for="pageCategory">קטגוריה:</label>
+            <select id="pageCategory" name="pageCategory" required>
+                <option value="promotion">קידום</option>
+                <option value="product">מוצר</option>
+                <option value="event">אירוע</option>
+            </select>
+            
+            <label for="publishDate">תאריך פרסום:</label>
+            <input type="date" id="publishDate" name="publishDate">
+            
+            <button type="submit">שמור</button>
+        </form>
+
+        <section id="preview">
+            <h2>תצוגה מקדימה</h2>
+            <div id="previewContent">
+                <!-- תוכן התצוגה המקדימה יוצג כאן -->
+            </div>
+        </section>
+    </main>
+    <script src="../script/landing_page_editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* כלליים */
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   line-height: 1.6;
+   background-color: #f9f9f9; /* צבע רקע אחיד לכל העמודים */
+}
+
+/* כותרת עליונה */
+header {
+   background-color: #007BFF; /* צבע כחול כהה */
+   color: white;
+   padding: 15px 0;
+   text-align: center;
+}
+
+header h1 {
+   margin: 0;
+}
+
+/* תפריט ניווט */
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+}
+
+nav ul li {
+   display: inline;
+   margin-right: 20px; /* מרווח בין פריטים בתפריט */
+}
+
+nav ul li a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s ease; /* אנימציה רכה לשינוי צבע */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+   color: #FFD700; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
+   text-decoration: underline;
+}
+
+/* אזור עיקרי */
+main {
+   padding: 20px;
+   max-width: 1000px;
+   margin: 20px auto;
+   background-color: #ffffff; /* צבע רקע לבן לתוכן */
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל קל ומודגש */
+}
+
+/* עיצוב טפסים */
+form {
+   background-color: #ffffff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל קל */
+}
+
+form label {
+   display: block;
+   margin-bottom: 5px;
+   font-weight: bold;
+}
+
+form input, form textarea, form select {
+   width: calc(100% - 16px); /* חישוב רוחב עם פדינג */
+   padding: 10px; /* הגדלת רווח פנימי */
+   margin-bottom: 15px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
+form button {
+   background-color: #28a745; /* צבע ירוק כהה */
+   color: white;
+   border: none;
+   padding: 12px 20px;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 16px; /* הגדלת גודל הפונט */
+   transition: background-color 0.3s ease; /* אנימציה רכה לשינוי צבע */
+}
+
+form button:hover {
+   background-color: #218838; /* צבע ירוק כהה יותר בעת ריחוף */
+}
+
+/* תצוגה מקדימה */
+#preview, #previewContent {
+   margin-top: 20px;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל קל */
+   background-color: #ffffff; /* צבע רקע לבן */
+}
+
+/* כותרות */
+h1, h2 {
+   margin-top: 0;
+   color: #333; /* צבע כהה לכותרות */
+}
+
+/* טבלה */
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+}
+
+table th, table td {
+   border: 1px solid #ddd;
+   padding: 12px;
+   text-align: left;
+}
+
+table th {
+   background-color: #007BFF; /* צבע כחול כהה לכותרות טבלה */
+   color: white;
+   font-weight: bold;
+}
+
+/* עיצוב תמונות בתוכן */
+.table-image {
+   width: 120px;
+   height: auto;
+}
+
+.table-content {
+   max-width: 250px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+/* עיצוב כפתורים בפעולות */
+.actions button {
+   margin: 0 5px;
+   padding: 8px 12px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 14px;
+   transition: background-color 0.3s ease;
+}
+
+.actions .view {
+   background-color: #28a745; /* צבע ירוק כהה */
+   color: white;
+}
+
+.actions .edit {
+   background-color: #ffc107; /* צבע צהוב */
+   color: black;
+}
+
+.actions .delete {
+   background-color: #dc3545; /* צבע אדום כהה */
+   color: white;
+}

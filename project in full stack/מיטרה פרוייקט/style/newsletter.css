@@ -1,0 +1,134 @@
+/* הגדרות כלליות */
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f9f9f9;
+}
+
+/* מיכל עיקרי */
+.container {
+   width: 100%;
+   max-width: 653px;
+   margin: 20px auto;
+   background-color: #ffffff;
+   border: 1px solid #ddd;
+   padding: 20px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   box-sizing: border-box;
+}
+
+/* כותרת */
+.header img {
+   width: 100%;
+   height: auto;
+}
+
+/* תוכן */
+.content h1 {
+   font-size: 24px;
+   color: #333;
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+.content p {
+   font-size: 16px;
+   line-height: 1.6;
+   color: #666;
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+/* כפתורים */
+.cta-buttons {
+   text-align: center;
+   margin: 20px 0;
+}
+
+.cta-buttons a {
+   display: inline-block;
+   margin: 0 10px;
+   padding: 10px 20px;
+   color: #fff;
+   text-decoration: none;
+   font-weight: bold;
+   border-radius: 5px;
+}
+
+.cta-buttons .about-us {
+   background-color: #007bff;
+}
+
+.cta-buttons .visit-site {
+   background-color: #28a745;
+}
+
+/* טופס הרשמה */
+.form-container {
+   text-align: center;
+   margin: 20px 0;
+}
+
+.form-container input[type="email"] {
+   width: calc(100% - 22px);
+   padding: 10px;
+   margin-bottom: 10px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+}
+
+.form-container input[type="checkbox"] {
+   margin-right: 10px;
+}
+
+.form-container button {
+   padding: 10px 20px;
+   border: none;
+   background-color: #007bff;
+   color: #fff;
+   border-radius: 5px;
+   font-size: 16px;
+   cursor: pointer;
+}
+
+.form-container button:hover {
+   background-color: #0056b3;
+}
+
+/* כותרת תחתונה */
+.footer {
+   text-align: center;
+   font-size: 14px;
+   color: #999;
+   margin-top: 20px;
+}
+
+/* עיצוב רספונסיבי */
+@media (max-width: 768px) {
+   .container {
+       padding: 15px;
+   }
+
+   .content h1 {
+       font-size: 20px;
+   }
+
+   .content p {
+       font-size: 14px;
+   }
+
+   .cta-buttons a {
+       padding: 8px 16px;
+       font-size: 14px;
+   }
+
+   .form-container input[type="email"] {
+       width: calc(100% - 18px);
+   }
+
+   .form-container button {
+       padding: 8px 16px;
+       font-size: 14px;
+   }
+}

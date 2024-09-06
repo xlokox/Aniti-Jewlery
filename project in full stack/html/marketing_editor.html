@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יצירת דף שיווק</title>
+    <link rel="stylesheet" href="../style/marketing_editor.css">
+</head>
+<body>
+    <header>
+        <h1>יצירת דף שיווק</h1>
+        <nav>
+            <ul>
+                <li><a href="/html/main.html">דף הבית</a></li>
+                <li><a href="../html/banner_editor.html">עורך באנרים</a></li>
+                <li><a href="../html/marketing_editor.html">עורך דף שיווק</a></li>
+                <li><a href="../html/landing_page_editor.html">עורך דף נחיתה</a></li>
+                <li><a href="../html/create_campaign.html">צור קמפיין</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="marketingForm">
+            <label for="marketingTitle">כותרת:</label>
+            <input type="text" id="marketingTitle" name="marketingTitle" required>
+            
+            <label for="marketingContent">תוכן:</label>
+            <textarea id="marketingContent" name="marketingContent" rows="4" required></textarea>
+            
+            <label for="marketingImage">תמונה:</label>
+            <input type="file" id="marketingImage" name="marketingImage" accept="image/*" required>
+            
+            <label for="marketingColor">צבע רקע:</label>
+            <input type="color" id="marketingColor" name="marketingColor" required>
+            
+            <button type="submit">שמור דף שיווק</button>
+        </form>
+
+        <div id="marketingPreview" class="preview">
+            <h2 id="previewTitle"></h2>
+            <p id="previewContent"></p>
+            <img id="previewImage" src="" alt="תצוגה מקדימה של התמונה">
+        </div>
+    </main>
+
+    <script src="../script/marketing_editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עורך באנרים</title>
+    <link rel="stylesheet" href="../style/banner_editor.css">
+</head>
+<body>
+    <header>
+        <h1>עורך באנרים</h1>
+        <nav>
+            <ul>
+                <li><a href="/html/main.html">ראשי</a></li>
+                <li><a href="../html/banner_editor.html">עורך באנרים</a></li>
+                <li><a href="../html/marketing_editor.html">עורך דף שיווקי</a></li>
+                <li><a href="../html/landing_page_editor.html">עורך דף נחיתה</a></li>
+                <li><a href="../html/create_campaign.html">יצירת קמפיין</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="bannerForm">
+            <label for="bannerTitle">כותרת:</label>
+            <input type="text" id="bannerTitle" name="bannerTitle" required>
+
+            <label for="bannerImage">תמונה:</label>
+            <input type="file" id="bannerImage" name="bannerImage" accept="image/*" required>
+
+            <label for="bannerWidth">רוחב (בפיקסלים):</label>
+            <input type="number" id="bannerWidth" name="bannerWidth" value="300" required>
+
+            <label for="bannerHeight">גובה (בפיקסלים):</label>
+            <input type="number" id="bannerHeight" name="bannerHeight" value="250" required>
+
+            <label for="bannerColor">צבע רקע:</label>
+            <input type="color" id="bannerColor" name="bannerColor" value="#ffffff">
+
+            <label for="bannerTextColor">צבע טקסט:</label>
+            <input type="color" id="bannerTextColor" name="bannerTextColor" value="#000000">
+
+            <label for="bannerFontSize">גודל פונט:</label>
+            <input type="text" id="bannerFontSize" name="bannerFontSize" value="16px">
+
+            <label for="bannerBorderRadius">רדיוס פינות:</label>
+            <input type="text" id="bannerBorderRadius" name="bannerBorderRadius" value="8px">
+
+            <label for="bannerBorderColor">צבע מסגרת:</label>
+            <input type="color" id="bannerBorderColor" name="bannerBorderColor" value="#cccccc">
+
+            <label for="bannerBorderWidth">עובי מסגרת:</label>
+            <input type="text" id="bannerBorderWidth" name="bannerBorderWidth" value="1px">
+
+            <label for="bannerText">טקסט על הבאנר:</label>
+            <textarea id="bannerText" name="bannerText"></textarea>
+
+            <div id="bannerPreview" class="banner-preview-container"></div>
+            <button type="submit">שמור באנר</button>
+        </form>
+    </main>
+    <script src="../script/banner_editor.js"></script>
+</body>
+</html>

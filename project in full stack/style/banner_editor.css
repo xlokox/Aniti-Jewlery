@@ -1,0 +1,153 @@
+/* עיצוב הבאנר עורך */
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f4f4f4;
+   margin: 0;
+   padding: 0;
+}
+
+/* עיצוב כותרת עליונה */
+header {
+   background-color: #007BFF; /* צבע כחול כהה לכותרת */
+   color: white;
+   padding: 15px 0; /* הגדלת הפדינג בכותרת */
+   text-align: center;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* צל עדין לכותרת */
+}
+
+header h1 {
+   margin: 0;
+   font-size: 24px; /* הגדלת גודל הפונט בכותרת */
+}
+
+/* עיצוב תפריט ניווט */
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+
+nav ul li {
+   display: inline;
+   margin: 0 15px; /* מרווח בין פריטים */
+}
+
+nav ul li a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s; /* מעבר חלק לצבע */
+}
+
+nav ul li a:hover {
+   color: #FFD700; /* צבע זהב בעת ריחוף */
+}
+
+/* עיצוב תוכן עיקרי */
+main {
+   padding: 20px;
+   max-width: 800px; /* רוחב מקסימלי לפורם */
+   margin: 20px auto;
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* צל מעט כהה יותר */
+}
+
+/* עיצוב הפורם */
+form {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+form label {
+   display: block;
+   margin-bottom: 8px; /* מרווח קטן יותר בין התווית לשדה */
+   font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="file"],
+form input[type="number"],
+form input[type="color"],
+form textarea {
+   width: calc(100% - 16px); /* חישוב רוחב עם פדינג */
+   padding: 10px;
+   margin-bottom: 15px; /* מרווח בין שדות */
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   box-sizing: border-box; /* כולל פדינג בגובה הכולל */
+}
+
+form button {
+   background-color: #007BFF; /* צבע כחול כהה לכפתור */
+   color: white;
+   border: none;
+   padding: 12px 20px; /* הגדלת הפדינג בכפתור */
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 16px; /* הגדלת גודל הפונט */
+   transition: background 0.3s; /* מעבר חלק לצבע */
+}
+
+form button:hover {
+   background-color: #0056b3; /* צבע כהה יותר בעת ריחוף */
+}
+
+/* תצוגה חיה של הבאנר */
+#bannerPreview {
+   margin-top: 20px;
+   padding: 20px;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   background-color: #fff;
+   text-align: center;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.banner-preview {
+   display: inline-block;
+   text-align: center;
+   padding: 10px;
+   box-sizing: border-box;
+}
+
+.banner-preview img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+   margin: 0 auto;
+}
+
+.banner-preview .text {
+   margin-top: 10px;
+}
+
+/* עיצוב תצוגה למכשירים ניידים */
+@media (max-width: 600px) {
+   nav ul li {
+       display: block;
+       margin-bottom: 10px;
+   }
+}
+.banner-preview-container {
+   margin-top: 20px;
+}
+
+.banner-preview {
+   position: relative;
+   overflow: hidden;
+}
+
+.banner-preview img {
+   max-width: 100%;
+   height: auto;
+}
+
+.text {
+   position: absolute;
+   bottom: 10px;
+   left: 10px;
+}

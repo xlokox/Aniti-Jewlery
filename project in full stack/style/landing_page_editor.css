@@ -1,0 +1,127 @@
+/* עיצוב כלל גופי האתר */
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f4f4f4; /* צבע רקע כללי */
+   line-height: 1.6; /* שיפור קריאות הטקסט */
+}
+
+/* עיצוב הכותרת */
+header {
+   background-color: #007BFF; /* צבע כחול כהה */
+   color: white;
+   padding: 15px 0;
+   text-align: center; /* ממרכז את התוכן בכותרת */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת צל קטן לכותרת */
+}
+
+/* עיצוב התפריט */
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+}
+
+nav ul li {
+   display: inline;
+   margin: 0 20px; /* מרווח בין פריטים */
+}
+
+nav ul li a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s, text-decoration 0.3s; /* מעבר חלק לצבע וקו תחתון */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+   color: #FFD700; /* צבע זהב להדגשה */
+   text-decoration: underline; /* קו תחתון בעת ריחוף על הקישורים */
+}
+
+/* עיצוב תוכן העמוד */
+main {
+   padding: 20px;
+   max-width: 900px; /* רוחב מקסימלי לפורם */
+   margin: 20px auto; /* ממרכז את התוכן במרכז העמוד */
+   background-color: white; /* צבע רקע לבן לתוכן */
+   border-radius: 8px; /* פינות מעוגלות לתוכן */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת צל לתוכן */
+}
+
+/* עיצוב כותרות */
+h1, h2 {
+   margin-top: 0;
+   color: #333; /* צבע כהה לכותרות */
+}
+
+/* עיצוב הפורם */
+form {
+   display: flex;
+   flex-direction: column; /* התמצאות בשורה אחת */
+}
+
+form label {
+   margin: 10px 0 5px; /* מרווח בין התווית לשדה */
+   font-weight: bold; /* הוספת עובי לפונט של התווית */
+}
+
+input[type="text"], textarea {
+   width: 100%; /* ממלא את הרוחב של הפורם */
+   padding: 10px;
+   margin-bottom: 15px; /* מרווח בין שדות */
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   box-sizing: border-box; /* כלול פדינג בגובה הכולל */
+}
+
+textarea {
+   resize: vertical; /* מאפשר שינוי גובה */
+   min-height: 120px; /* גובה מינימלי לאיזור כתיבה */
+}
+
+/* עיצוב כפתור */
+button {
+   background-color: #007BFF; /* צבע כחול כהה לכפתור */
+   color: white;
+   border: none;
+   padding: 12px 20px;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background-color 0.3s; /* מעבר חלק בצבע בעת ריחוף */
+}
+
+button:hover {
+   background-color: #0056b3; /* צבע כהה יותר בעת ריחוף */
+}
+
+/* עיצוב התצוגה המקדימה */
+#preview {
+   margin-top: 20px;
+   padding: 20px;
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת צל קל */
+}
+
+/* עיצוב טבלה */
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+}
+
+table th, table td {
+   border: 1px solid #ddd;
+   padding: 12px;
+   text-align: left;
+}
+
+table th {
+   background-color: #007BFF; /* צבע כחול כהה לכותרות טבלה */
+   color: white;
+   font-weight: bold;
+}

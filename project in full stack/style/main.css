@@ -1,0 +1,312 @@
+/* עיצוב כלל גופי האתר */
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f9f9f9; /* צבע רקע בהיר */
+}
+
+/* עיצוב הכותרת */
+header {
+   background-color: #007BFF; /* צבע כחול בהיר לכותרת */
+   color: white;
+   padding: 15px 0;
+   text-align: center;
+}
+
+/* עיצוב התפריט */
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+}
+
+nav ul li {
+   display: inline;
+   margin: 0 20px; /* מרווח בין פריטים */
+}
+
+nav ul li a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s ease; /* אנימציה רכה לשינוי צבע */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+   color: #FFD700; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
+}
+
+/* עיצוב תוכן העמוד */
+main {
+   padding: 20px;
+   max-width: 1000px;
+   margin: 20px auto;
+   background-color: #ffffff; /* צבע רקע לבן לתוכן */
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל קל ומודגש יותר */
+}
+
+/* עיצוב כותרות */
+h1, h2 {
+   margin-top: 0;
+   color: #333333; /* צבע כהה לכותרות */
+}
+
+/* עיצוב הטבלה */
+table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+table, th, td {
+   border: 1px solid #ddd;
+}
+
+th, td {
+   padding: 12px;
+   text-align: left;
+}
+
+th {
+   background-color: #007BFF; /* צבע כחול בהיר לכותרות טבלה */
+   color: white;
+}
+
+/* עיצוב התמונות בתוכן הטבלה */
+.table-image {
+   width: 120px; /* רוחב מוגדל לתמונות */
+   height: auto;
+}
+
+/* עיצוב תוכן הטבלה */
+.table-content {
+   max-width: 250px; /* רוחב מקסימלי מוגדל */
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+/* עיצוב כפתורים */
+.actions button {
+   margin: 0 5px;
+   padding: 8px 12px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 14px;
+   transition: background-color 0.3s ease; /* אנימציה רכה לשינוי צבע */
+}
+
+/* עיצוב כפתורים פעולות */
+.view {
+   background-color: #28a745; /* צבע ירוק כהה */
+   color: white;
+}
+
+.edit {
+   background-color: #ffc107; /* צבע צהוב */
+   color: black;
+}
+
+.delete {
+   background-color: #dc3545; /* צבע אדום כהה */
+   color: white;
+}
+
+/* עיצוב תצוגה מקדימה */
+.preview-content {
+   padding: 20px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   background-color: #ffffff;
+}
+
+/* עיצוב תמונות בתצוגה מקדימה */
+.preview-image {
+   max-width: 100%;
+   height: auto;
+}
+
+/* עיצוב קישורים לקריאה לפעולה */
+.cta-link {
+   display: inline-block;
+   padding: 12px 18px;
+   background-color: #007BFF; /* צבע כחול כהה */
+   color: white;
+   text-decoration: none;
+   border-radius: 4px;
+   margin-top: 10px;
+   transition: background-color 0.3s ease; /* אנימציה רכה לשינוי צבע */
+}
+
+.cta-link:hover {
+   background-color: #0056b3; /* צבע כחול כהה יותר בעת ריחוף */
+}
+
+/* עיצוב קישור פעיל */
+.active {
+   font-weight: bold;
+   color: #FFD700; /* צבע זהב להדגשה */
+}
+/* עיצוב כללי של התצוגה המקדימה */
+.preview {
+   border: 2px solid #ccc; /* מסגרת רכה */
+   padding: 20px;
+   margin-top: 20px;
+   background-color: #f9f9f9; /* צבע רקע בהיר */
+   border-radius: 8px; /* פינות מעוגלות */
+}
+
+.preview-content {
+   text-align: center; /* מרכז את התוכן */
+}
+
+.preview-image {
+   max-width: 100%; /* תצוגה מקסימלית של התמונה */
+   height: auto;
+   border: 1px solid #ddd; /* מסגרת מסביב לתמונה */
+   border-radius: 4px; /* פינות מעוגלות לתמונה */
+}
+
+.preview-content h1, .preview-content h2 {
+   color: #333; /* צבע טקסט כהה */
+}
+
+.preview-content p {
+   color: #666; /* צבע טקסט בהיר יותר */
+   font-size: 16px; /* גודל גופן */
+   margin: 10px 0; /* רווחים למעלה ולמטה */
+}
+
+.cta-link {
+   display: inline-block;
+   padding: 10px 20px;
+   color: #fff;
+   background-color: #007bff; /* צבע רקע לכפתור */
+   text-decoration: none; /* ביטול קו תחתון */
+   border-radius: 4px; /* פינות מעוגלות לכפתור */
+   font-size: 16px;
+}
+
+.cta-link:hover {
+   background-color: #0056b3; /* שינוי צבע בעת ריחוף */
+}
+/* עיצוב רספונסיבי */
+@media (max-width: 768px) {
+   nav ul {
+       display: none; /* הסתרת התפריט הרגיל במסכים קטxנים */
+   }
+
+   .navbar .menu-btn {
+       display: block; /* הצגת כפתור התפריט הנפתח */
+   }
+
+   .navbar .menu {
+       display: block; /* הצגת התפריט הנפתח אם הוא פתוח */
+   }
+
+   .navbar .menu.open {
+       display: block;
+   }
+}
+
+@media (min-width: 769px) {
+   .navbar .menu {
+       display: flex;
+   }
+}
+/* עיצוב התפריט */
+.navbar {
+   position: relative; /* מיקום יחסי למקם את כפתור ההמבורגר */
+}
+
+.menu-btn {
+   display: none; /* ברירת מחדל - התפריט הנפתח מוסתר */
+   cursor: pointer;
+   font-size: 24px;
+   color: white;
+   background: none;
+   border: none;
+   position: absolute;
+   top: 15px;
+   right: 15px;
+}
+
+.menu {
+   display: flex; /* ברירת מחדל - תפריט פתוח במסכים רחבים */
+   justify-content: center; /* ממרכז את פריטי התפריט */
+}
+
+.menu.open {
+   display: flex; /* מציג את התפריט הנפתח כאשר הוא פתוח */
+   flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
+}
+
+.menu ul {
+   display: flex; /* מציג את פריטי התפריט בשורה */
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
+}
+
+.menu ul li {
+   margin: 0;
+}
+
+.menu ul li a {
+   padding: 10px 20px;
+   display: block;
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+.menu ul li a:hover,
+.menu ul li a.active {
+   background-color: #FFD700; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
+}
+
+/* עיצוב רספונסיבי - המסך קטן מ-768px */
+@media (max-width: 768px) {
+   .menu {
+       display: none; /* הסתרת התפריט הרגיל במסכים קטנים */
+   }
+
+   .menu-btn {
+       display: block; /* הצגת כפתור התפריט הנפתח */
+   }
+
+   .menu.open {
+       display: flex; /* הצגת התפריט הנפתח אם הוא פתוח */
+   }
+
+   .menu ul {
+       flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
+   }
+
+   .menu ul li a {
+       padding: 15px 20px;
+   }
+}
+
+/* עיצוב רספונסיבי - המסך קטן מ-480px */
+@media (max-width: 480px) {
+   .menu-btn {
+       display: none; /* הסתרת כפתור ההמבורגר במסכים קטנים מאוד */
+   }
+
+   .menu {
+       display: flex; /* הצגת התפריט הרגיל במסכים קטנים מאוד */
+       flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
+   }
+
+   .menu ul {
+       flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
+   }
+
+   .menu ul li a {
+       padding: 10px; /* התאמת רווחים פריט התפריט למסכים קטנים מאוד */
+   }
+}

@@ -1,0 +1,121 @@
+/* Resetting some basic styles */
+body, h1, h2, p {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* Basic styling for the body */
+body {
+   font-family: Arial, sans-serif;
+   line-height: 1.6;
+   background-color: #f4f4f4;
+   padding: 0 20px;
+}
+
+/* Header styling */
+header {
+   background: #007BFF; /* צבע כחול כהה */
+   color: #fff;
+   padding: 15px 0;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת צל קטן לכותרת */
+}
+
+header h1 {
+   text-align: center;
+   font-size: 1.8em; /* הגדלת גודל הכותרת */
+   margin-bottom: 10px;
+}
+
+header nav ul {
+   list-style: none;
+   padding: 0;
+   text-align: center;
+   margin: 0;
+}
+
+header nav ul li {
+   display: inline;
+   margin: 0 15px;
+}
+
+header nav ul li a {
+   color: #fff;
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s, text-decoration 0.3s; /* מעבר חלק לצבע וקו תחתון */
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+   color: #FFD700; /* צבע זהב להדגשה */
+   text-decoration: underline; /* קו תחתון בעת ריחוף על הקישורים */
+}
+
+/* Main content styling */
+main {
+   max-width: 900px; /* רוחב מקסימלי לפורם */
+   margin: 20px auto;
+   background: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת צל לתוכן */
+}
+
+/* Form styling */
+form {
+   display: flex;
+   flex-direction: column;
+}
+
+form label {
+   margin-top: 10px;
+   font-weight: bold; /* הוספת עובי לפונט של התווית */
+}
+
+form input, form textarea {
+   margin-top: 5px;
+   padding: 12px; /* הגדלת פדינג לשדות */
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   box-sizing: border-box; /* כלול פדינג בגובה הכולל */
+}
+
+form textarea {
+   resize: vertical; /* מאפשר שינוי גובה */
+   min-height: 120px; /* גובה מינימלי לאיזור כתיבה */
+}
+
+/* Button styling */
+form button {
+   margin-top: 20px;
+   padding: 12px 20px; /* הגדלת גובה ורוחב הכפתור */
+   border: none;
+   border-radius: 4px;
+   background: #007BFF; /* צבע כחול כהה לכפתור */
+   color: #fff;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background-color 0.3s; /* מעבר חלק בצבע בעת ריחוף */
+}
+
+form button:hover {
+   background: #0056b3; /* צבע כהה יותר בעת ריחוף */
+}
+
+/* Preview section styling */
+.preview {
+   margin-top: 20px;
+   padding: 20px;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   background: #fff;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת צל קל */
+}
+
+.preview img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+   margin-top: 10px;
+}

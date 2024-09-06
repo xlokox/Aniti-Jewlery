@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף ראשי</title>
+    <link rel="stylesheet" href="../style/main.css">
+</head>
+<body>
+    <header>
+        <h1> דף ראשי</h1>
+        <div class="navbar">
+            <button class="menu-btn">
+                &#9776; <!-- תו המבורגר -->
+            </button>
+            <nav class="menu">
+                <ul>
+                    <li><a href="/מיטרה פרוייקט/html/index.html">פרוייקט מיטרה</a></li>
+                    <li><a href="/html/main.html" id="linkMain">ראשי</a></li>
+                    <li><a href="../html/banner_editor.html" id="linkBannerEditor">עורך באנרים</a></li>
+                    <li><a href="../html/marketing_editor.html" id="linkMarketingEditor">עורך דף שיווקי</a></li>
+                    <li><a href="../html/landing_page_editor.html" id="linkLandingPageEditor">עורך דף נחיתה</a></li>
+                    <li><a href="../html/create_campaign.html" id="linkCreateCampaign">יצירת קמפיין</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2>כל הבאנרים ודפי הנחיתה</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>סוג</th>
+                    <th>כותרת</th>
+                    <th>תמונה / תוכן</th>
+                    <th>פעולות</th>
+                </tr>
+            </thead>
+            <tbody id="itemsTableBody">
+                <!-- תוכן יתווסף כאן עם JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- תצוגה מקדימה -->
+        <section id="preview">
+            <h2>תצוגה מקדימה</h2>
+            <!-- תוכן התצוגה המקדימה יוצג כאן עם JavaScript -->
+        </section>
+    </main>
+    <script src="../script/main.js"></script>
+</body>
+</html>

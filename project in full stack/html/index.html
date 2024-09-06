@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף כניסה</title>
+    <link rel="stylesheet" href="../style/login.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="register.html">הירשם</a></li>
+            <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>ברוכים הבאים ל-Aniti Jewelry</h1>
+        <form id="loginForm">
+            <label for="username">שם משתמש:</label>
+            <input type="text" id="username" required>
+            
+            <label for="password">סיסמה:</label>
+            <input type="password" id="password" required>
+            
+            <button type="submit">התחבר</button>
+        </form>
+        <p id="errorMessage" class="error"></p>
+        <div class="additional-links">
+            <a href="register.html">עדיין לא נרשמת? הירשם כאן</a>
+            <a href="forgot_password.html">שכחת סיסמה? לחץ כאן לשחזור</a>
+        </div>
+    </div>
+    <script src="../script/login.js"></script>
+</body>
+</html>

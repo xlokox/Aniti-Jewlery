@@ -1,0 +1,109 @@
+/* עיצוב כלל גופי האתר */
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f9f9f9;
+   margin: 0;
+   padding: 0;
+}
+
+/* עיצוב תפריט ניווט */
+nav {
+   background-color: #007BFF;
+   padding: 15px;
+   color: white;
+}
+
+nav ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+}
+
+nav ul li {
+   margin: 0 15px;
+}
+
+nav ul li a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+nav ul li a:hover {
+   text-decoration: underline;
+}
+
+/* עיצוב קונטיינר */
+.container {
+   max-width: 500px;
+   margin: 40px auto;
+   padding: 20px;
+   background-color: #ffffff;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* עיצוב כותרת */
+h1 {
+   color: #333;
+   text-align: center;
+}
+
+/* עיצוב טפסים */
+form {
+   display: flex;
+   flex-direction: column;
+}
+
+label {
+   margin-top: 10px;
+   font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+   padding: 10px;
+   margin-top: 5px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+}
+
+button {
+   margin-top: 20px;
+   padding: 10px;
+   border: none;
+   border-radius: 4px;
+   background-color: #007BFF;
+   color: white;
+   font-size: 16px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+button:hover {
+   background-color: #0056b3;
+}
+
+/* עיצוב הודעות */
+.error {
+   margin-top: 20px;
+   color: #dc3545;
+   text-align: center;
+}
+
+/* עיצוב קישורים נוספים */
+.additional-links {
+   margin-top: 20px;
+   text-align: center;
+}
+
+.additional-links a {
+   color: #007BFF;
+   text-decoration: none;
+}
+
+.additional-links a:hover {
+   text-decoration: underline;
+}
