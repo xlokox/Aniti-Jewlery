@@ -206,10 +206,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // תפריט המבורגר
-    const menuBtn = document.querySelector('.menu-btn'); // מוצא את כפתור ההמבורגר
-    const menu = document.querySelector('.menu'); // מוצא את התפריט
-
-    menuBtn.addEventListener('click', () => {
-        menu.classList.toggle('open'); // פתיחת וסגירת התפריט בלחיצה על הכפתור
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuBtn = document.querySelector('.menu-btn'); // מוצא את כפתור ההמבורגר
+        const menu = document.querySelector('.menu'); // מוצא את התפריט
+    
+        // פתיחת וסגירת התפריט בלחיצה על כפתור ההמבורגר
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
     });
+    
 });

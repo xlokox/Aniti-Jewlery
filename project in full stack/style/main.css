@@ -3,41 +3,102 @@ body {
    font-family: Arial, sans-serif;
    margin: 0;
    padding: 0;
-   background-color: #f9f9f9; /* צבע רקע בהיר */
+   background-color: #f9f9f9;
 }
 
 /* עיצוב הכותרת */
 header {
-   background-color: #007BFF; /* צבע כחול בהיר לכותרת */
+   background-color: #007BFF;
    color: white;
    padding: 15px 0;
    text-align: center;
 }
 
-/* עיצוב התפריט */
-nav ul {
+/* עיצוב תפריט הניווט */
+.navbar {
+   position: relative;
+   display: flex;
+   justify-content: center;
+}
+.menu-btn {
+   display: none; /* מוסתר במסכים גדולים */
+   font-size: 24px;
+   color: white;
+   background: none;
+   border: none;
+   cursor: pointer;
+   position: absolute;
+   top: 15px;
+   right: 15px;
+}
+
+/* תפריט רגיל במסכים גדולים */
+.menu {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.menu ul {
    list-style-type: none;
-   padding: 0;
+   display: flex;
    margin: 0;
+   padding: 0;
 }
 
-nav ul li {
-   display: inline;
-   margin: 0 20px; /* מרווח בין פריטים */
+
+.menu ul li {
+   margin: 0 20px;
 }
 
-nav ul li a {
+.menu ul li a {
    color: white;
    text-decoration: none;
    font-weight: bold;
-   transition: color 0.3s ease; /* אנימציה רכה לשינוי צבע */
+   transition: color 0.3s ease;
+}
+.menu ul li a:hover,
+.menu ul li a.active {
+   color: black;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-   color: black; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
-}
+/* תפריט המבורגר רספונסיבי */
+@media (max-width: 768px) {
+   .menu {
+       display: none; /* מוסתר במסכים קטנים */
+       flex-direction: column;
+       background-color: #007bff;
+       position: absolute;
+       top: 50px;
+       right: 0;
+       width: 100%;
+   }
 
+   .menu.open {
+       display: flex; /* תצוגה כאשר פתוח */
+   }
+
+   .menu-btn {
+       display: block; /* מוצג במסכים קטנים */
+   }
+
+   .menu ul {
+       flex-direction: column;
+       width: 100%;
+       padding: 0;
+   }
+
+   .menu ul li {
+       margin: 0;
+   }
+
+   .menu ul li a {
+       padding: 15px;
+       text-align: center;
+       width: 100%;
+       display: block;
+   }
+}
 /* עיצוב תוכן העמוד */
 main {
    padding: 20px;
@@ -127,6 +188,8 @@ th {
 .preview-image {
    max-width: 100%;
    height: auto;
+   border: 1px solid #ddd; /* מסגרת מסביב לתמונה */
+   border-radius: 4px; /* פינות מעוגלות לתמונה */
 }
 
 /* עיצוב קישורים לקריאה לפעולה */
@@ -148,162 +211,5 @@ th {
 /* עיצוב קישור פעיל */
 .active {
    font-weight: bold;
-   color: black; /* צבע זהב להדגשה */
-}
-/* עיצוב כללי של התצוגה המקדימה */
-.preview {
-   border: 2px solid #ccc; /* מסגרת רכה */
-   padding: 20px;
-   margin-top: 20px;
-   background-color: #f9f9f9; /* צבע רקע בהיר */
-   border-radius: 8px; /* פינות מעוגלות */
-}
-
-.preview-content {
-   text-align: center; /* מרכז את התוכן */
-}
-
-.preview-image {
-   max-width: 100%; /* תצוגה מקסימלית של התמונה */
-   height: auto;
-   border: 1px solid #ddd; /* מסגרת מסביב לתמונה */
-   border-radius: 4px; /* פינות מעוגלות לתמונה */
-}
-
-.preview-content h1, .preview-content h2 {
-   color: #333; /* צבע טקסט כהה */
-}
-
-.preview-content p {
-   color: #666; /* צבע טקסט בהיר יותר */
-   font-size: 16px; /* גודל גופן */
-   margin: 10px 0; /* רווחים למעלה ולמטה */
-}
-
-.cta-link {
-   display: inline-block;
-   padding: 10px 20px;
-   color: #fff;
-   background-color: #007bff; /* צבע רקע לכפתור */
-   text-decoration: none; /* ביטול קו תחתון */
-   border-radius: 4px; /* פינות מעוגלות לכפתור */
-   font-size: 16px;
-}
-
-.cta-link:hover {
-   background-color: black; /* שינוי צבע בעת ריחוף */
-}
-/* עיצוב רספונסיבי */
-@media (max-width: 768px) {
-   nav ul {
-       display: none; /* הסתרת התפריט הרגיל במסכים קטxנים */
-   }
-
-   .navbar .menu-btn {
-       display: block; /* הצגת כפתור התפריט הנפתח */
-   }
-
-   .navbar .menu {
-       display: block; /* הצגת התפריט הנפתח אם הוא פתוח */
-   }
-
-   .navbar .menu.open {
-       display: block;
-   }
-}
-
-@media (min-width: 769px) {
-   .navbar .menu {
-       display: flex;
-   }
-}
-/* עיצוב התפריט */
-.navbar {
-   position: relative; /* מיקום יחסי למקם את כפתור ההמבורגר */
-}
-
-.menu-btn {
-   display: none; /* ברירת מחדל - התפריט הנפתח מוסתר */
-   cursor: pointer;
-   font-size: 24px;
-   color: white;
-   background: none;
-   border: none;
-   position: absolute;
-   top: 15px;
-   right: 15px;
-}
-
-.menu {
-   display: flex; /* ברירת מחדל - תפריט פתוח במסכים רחבים */
-   justify-content: center; /* ממרכז את פריטי התפריט */
-}
-
-.menu.open {
-   display: flex; /* מציג את התפריט הנפתח כאשר הוא פתוח */
-   flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
-}
-
-.menu ul {
-   display: flex; /* מציג את פריטי התפריט בשורה */
-   margin: 0;
-   padding: 0;
-   list-style-type: none;
-}
-
-.menu ul li {
-   margin: 0;
-}
-
-.menu ul li a {
-   padding: 10px 20px;
-   display: block;
-   color: white;
-   text-decoration: none;
-   font-weight: bold;
-}
-
-
-
-/* עיצוב רספונסיבי - המסך קטן מ-768px */
-@media (max-width: 768px) {
-   .menu {
-       display: none; /* הסתרת התפריט הרגיל במסכים קטנים */
-   }
-
-   .menu-btn {
-       display: block; /* הצגת כפתור התפריט הנפתח */
-   }
-
-   .menu.open {
-       display: flex; /* הצגת התפריט הנפתח אם הוא פתוח */
-   }
-
-   .menu ul {
-       flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
-   }
-
-   .menu ul li a {
-       padding: 15px 20px;
-   }
-}
-
-/* עיצוב רספונסיבי - המסך קטן מ-480px */
-@media (max-width: 480px) {
-   .menu-btn {
-       display: none; /* הסתרת כפתור ההמבורגר במסכים קטנים מאוד */
-   }
-
-   .menu {
-       display: flex; /* הצגת התפריט הרגיל במסכים קטנים מאוד */
-       flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
-   }
-
-   .menu ul {
-       flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
-   }
-
-   .menu ul li a {
-       padding: 10px; /* התאמת רווחים פריט התפריט למסכים קטנים מאוד */
-   }
+   color: black; /* צבע להדגשה */
 }
