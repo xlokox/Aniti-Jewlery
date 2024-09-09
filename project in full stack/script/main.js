@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // תוכן/תמונה
             const contentCell = document.createElement('td');
-            if (item.type === 'banner' || item.type === 'marketing') {
+            if (item.type === 'banner' || item.type === 'marketing' || item.type === 'marketingPage') {
+                // עדכון לתמוך גם ב-MarketingPage
                 if (item.image) {
                     const img = document.createElement('img');
                     img.src = item.image;
@@ -78,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const previewContent = document.createElement('div');
         previewContent.className = 'preview-content';
 
-        if (item.type === 'banner' || item.type === 'marketing') {
+        if (item.type === 'banner' || item.type === 'marketing' || item.type === 'marketingPage') {
+            // עדכון לתמוך גם ב-MarketingPage
             if (item.image) {
                 const img = document.createElement('img');
                 img.src = item.image;
