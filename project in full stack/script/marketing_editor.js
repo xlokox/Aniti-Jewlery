@@ -90,3 +90,16 @@ function updatePreview() {
         previewImage.style.backgroundColor = color; 
     }
 }
+// פונקציה לתפעול המבורגר
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.menu-btn'); // בחירת כפתור ההמבורגר
+    const menu = document.querySelector('.menu'); // בחירת התפריט
+
+    // בדיקה אם כפתור ההמבורגר והתפריט קיימים בעמוד
+    if (menuBtn && menu) {
+        // הוספת מאזין לאירוע לחיצה על כפתור ההמבורגר
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('open'); // פתיחת וסגירת התפריט
+        });
+    }
+});

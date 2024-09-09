@@ -48,7 +48,7 @@ header nav ul li a {
 
 header nav ul li a:hover,
 header nav ul li a.active {
-   color: gold; /* צבע זהב להדגשה */
+   color: black; /* צבע זהב להדגשה */
    text-decoration: underline; /* קו תחתון בעת ריחוף על הקישורים */
 }
 
@@ -118,4 +118,43 @@ form button:hover {
    height: auto;
    display: block;
    margin-top: 10px;
+}
+@media (max-width: 600px) {
+   .menu-btn {
+       display: block; /* הצגת כפתור ההמבורגר */
+   }
+
+   nav ul {
+       display: none; /* הסתרת התפריט הרגיל */
+       flex-direction: column;
+       background-color: #007BFF; /* צבע התפריט הנפתח */
+       position: absolute;
+       top: 50px;
+       right: 0;
+       width: 100%;
+       z-index: 10;
+   }
+   .menu.open {
+     display: flex; /* הצגת התפריט כאשר הוא פתוח */
+ }
+
+ nav ul li {
+     display: block;
+     margin-bottom: 10px; /* מרווח בין הפריטים בתפריט הנפתח */
+ }
+  
+}
+/* הצגת כפתור ההמבורגר והסתרת התפריט הרגיל במסכים קטנים */
+@media (max-width: 600px) {
+  .menu-btn {
+      display: block; /* הצגת כפתור ההמבורגר */
+  }
+
+  nav ul {
+      display: none; /* הסתרת התפריט הרגיל */
+  }
+
+  .menu.open {
+      display: flex; /* הצגת התפריט כאשר הוא פתוח */
+  }
 }
