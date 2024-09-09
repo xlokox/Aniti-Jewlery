@@ -20,12 +20,10 @@ header h1 {
 }
 
 /* תפריט ניווט */
-/* עיצוב תפריט ניווט */
 nav ul {
    list-style-type: none;
    padding: 0;
    margin: 0;
-   text-align: center;
 }
 
 nav ul li {
@@ -33,16 +31,17 @@ nav ul li {
    margin-right: 20px; /* מרווח בין פריטים בתפריט */
 }
 
-
 nav ul li a {
    color: white;
    text-decoration: none;
    font-weight: bold;
-   transition: color 0.3s; /* מעבר חלק לצבע */
+   transition: color 0.3s ease; /* אנימציה רכה לשינוי צבע */
 }
 
-nav ul li a:hover {
-   color: black; /* צבע שחור בעת ריחוף */
+nav ul li a:hover,
+nav ul li a.active {
+   color: black; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
+   text-decoration: underline;
 }
 
 /* אזור עיקרי */
@@ -164,45 +163,4 @@ table th {
 .actions .delete {
    background-color: #dc3545; /* צבע אדום כהה */
    color: white;
-}
-
-/* כאשר המסך קטן מ-600 פיקסלים - הצגת כפתור ההמבורגר */
-@media (max-width: 600px) {
-   .menu-btn {
-       display: block; /* הצגת כפתור ההמבורגר */
-   }
-
-   nav ul {
-       display: none; /* הסתרת התפריט הרגיל */
-       flex-direction: column;
-       background-color: #007BFF; /* צבע התפריט הנפתח */
-       position: absolute;
-       top: 50px;
-       right: 0;
-       width: 100%;
-       z-index: 10;
-   }
-   .menu.open {
-     display: flex; /* הצגת התפריט כאשר הוא פתוח */
- }
-
- nav ul li {
-     display: block;
-     margin-bottom: 10px; /* מרווח בין הפריטים בתפריט הנפתח */
- }
-  
-}
-/* הצגת כפתור ההמבורגר והסתרת התפריט הרגיל במסכים קטנים */
-@media (max-width: 600px) {
-  .menu-btn {
-      display: block; /* הצגת כפתור ההמבורגר */
-  }
-
-  nav ul {
-      display: none; /* הסתרת התפריט הרגיל */
-  }
-
-  .menu.open {
-      display: flex; /* הצגת התפריט כאשר הוא פתוח */
-  }
 }

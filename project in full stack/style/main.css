@@ -30,11 +30,12 @@ nav ul li a {
    color: white;
    text-decoration: none;
    font-weight: bold;
-   transition: color 0.3s; /* מעבר חלק לצבע */
+   transition: color 0.3s ease; /* אנימציה רכה לשינוי צבע */
 }
 
-nav ul li a:hover {
-   color: black; /* צבע שחור בעת ריחוף */
+nav ul li a:hover,
+nav ul li a.active {
+   color: black; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
 }
 
 /* עיצוב תוכן העמוד */
@@ -193,7 +194,33 @@ th {
    background-color: black; /* שינוי צבע בעת ריחוף */
 }
 /* עיצוב רספונסיבי */
+@media (max-width: 768px) {
+   nav ul {
+       display: none; /* הסתרת התפריט הרגיל במסכים קטxנים */
+   }
 
+   .navbar .menu-btn {
+       display: block; /* הצגת כפתור התפריט הנפתח */
+   }
+
+   .navbar .menu {
+       display: block; /* הצגת התפריט הנפתח אם הוא פתוח */
+   }
+
+   .navbar .menu.open {
+       display: block;
+   }
+}
+
+@media (min-width: 769px) {
+   .navbar .menu {
+       display: flex;
+   }
+}
+/* עיצוב התפריט */
+.navbar {
+   position: relative; /* מיקום יחסי למקם את כפתור ההמבורגר */
+}
 
 .menu-btn {
    display: none; /* ברירת מחדל - התפריט הנפתח מוסתר */
@@ -237,42 +264,46 @@ th {
 }
 
 
-@media (max-width: 600px) {
+
+/* עיצוב רספונסיבי - המסך קטן מ-768px */
+@media (max-width: 768px) {
+   .menu {
+       display: none; /* הסתרת התפריט הרגיל במסכים קטנים */
+   }
+
    .menu-btn {
-       display: block; /* הצגת כפתור ההמבורגר */
+       display: block; /* הצגת כפתור התפריט הנפתח */
    }
 
-   nav ul {
-       display: none; /* הסתרת התפריט הרגיל */
-       flex-direction: column;
-       background-color: #007BFF; /* צבע התפריט הנפתח */
-       position: absolute;
-       top: 50px;
-       right: 0;
-       width: 100%;
-       z-index: 10;
-   }
    .menu.open {
-     display: flex; /* הצגת התפריט כאשר הוא פתוח */
- }
+       display: flex; /* הצגת התפריט הנפתח אם הוא פתוח */
+   }
 
- nav ul li {
-     display: block;
-     margin-bottom: 10px; /* מרווח בין הפריטים בתפריט הנפתח */
- }
-  
+   .menu ul {
+       flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
+   }
+
+   .menu ul li a {
+       padding: 15px 20px;
+   }
 }
-/* הצגת כפתור ההמבורגר והסתרת התפריט הרגיל במסכים קטנים */
-@media (max-width: 600px) {
-  .menu-btn {
-      display: block; /* הצגת כפתור ההמבורגר */
-  }
 
-  nav ul {
-      display: none; /* הסתרת התפריט הרגיל */
-  }
+/* עיצוב רספונסיבי - המסך קטן מ-480px */
+@media (max-width: 480px) {
+   .menu-btn {
+       display: none; /* הסתרת כפתור ההמבורגר במסכים קטנים מאוד */
+   }
 
-  .menu.open {
-      display: flex; /* הצגת התפריט כאשר הוא פתוח */
-  }
+   .menu {
+       display: flex; /* הצגת התפריט הרגיל במסכים קטנים מאוד */
+       flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
+   }
+
+   .menu ul {
+       flex-direction: column; /* מסדר את פריטי התפריט בעמודה */
+   }
+
+   .menu ul li a {
+       padding: 10px; /* התאמת רווחים פריט התפריט למסכים קטנים מאוד */
+   }
 }
