@@ -1,108 +1,103 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // קריאה לפונקציה שמטענת את כל הפריטים מה-localStorage כשכל הדף נטען
-    loadItems();
+document.addEventListener('DOMContentLoaded', function () {
+    loadItems(); // טוען את כל הפריטים מה-localStorage
 
-    // פונקציה לטעינת הפריטים מה-localStorage והצגתם בטבלה
     function loadItems() {
-        const tableBody = document.querySelector('#itemsTableBody'); // בחירת גוף הטבלה שבה יוצגו הפריטים
-        tableBody.innerHTML = ''; // ניקוי תוכן קיים בטבלה לפני הצגת פריטים חדשים
+        const tableBody = document.querySelector('#itemsTableBody');
+        tableBody.innerHTML = ''; // ניקוי התוכן הקיים
 
-        // קריאה לפריטים מה-localStorage, אם אין פריטים, מאתחל למערך ריק
         const items = JSON.parse(localStorage.getItem('items')) || [];
-        items.forEach((item, index) => { // עובר על כל פריט במערך ומוסיף אותו לטבלה
-            const row = document.createElement('tr'); // יצירת שורה חדשה בטבלה
+        items.forEach((item, index) => {
+            const row = document.createElement('tr');
 
-            // יצירת תא לטור "סוג" והוספתו לשורה
+            // סוג
             const typeCell = document.createElement('td');
-            typeCell.textContent = item.type; // הכנסת הטקסט של סוג הפריט
+            typeCell.textContent = item.type;
             row.appendChild(typeCell);
 
-            // יצירת תא לטור "כותרת" והוספתו לשורה
+            // כותרת
             const titleCell = document.createElement('td');
-            titleCell.textContent = item.title; // הכנסת הטקסט של כותרת הפריט
+            titleCell.textContent = item.title;
             row.appendChild(titleCell);
 
-            // יצירת תא לטור "תוכן/תמונה" והוספתו לשורה
+            // תוכן/תמונה
             const contentCell = document.createElement('td');
-            if (item.type === 'banner' || item.type === 'marketing') { // בדיקה אם הפריט הוא באנר או דף שיווקי
-                if (item.image) { // אם יש תמונה לפריט
+            if (item.type === 'banner' || item.type === 'marketing') {
+                if (item.image) {
                     const img = document.createElement('img');
-                    img.src = item.image; // הכנסת נתיב התמונה (בדרך כלל Base64)
+                    img.src = item.image;
                     img.alt = 'Image';
-                    img.className = 'table-image'; // הוספת מחלקה לעיצוב התמונה
-                    contentCell.appendChild(img); // הוספת התמונה לתא
+                    img.className = 'table-image';
+                    contentCell.appendChild(img);
                 } else {
-                    contentCell.textContent = 'No image available'; // הודעה אם אין תמונה
+                    contentCell.textContent = 'No image available';
                 }
-            } else if (item.type === 'landingPage') { // אם הפריט הוא דף נחיתה
+            } else if (item.type === 'landingPage') {
                 const contentDiv = document.createElement('div');
                 contentDiv.className = 'table-content';
                 const contentText = document.createElement('p');
-                contentText.textContent = item.content || 'No content available'; // הצגת התוכן או הודעה שאין תוכן
+                contentText.textContent = item.content || 'No content available';
                 contentDiv.appendChild(contentText);
                 contentCell.appendChild(contentDiv);
             }
             row.appendChild(contentCell);
 
-            // יצירת תא לטור "פעולות" והוספת כפתורי פעולה (הצג, ערוך, מחק)
+            // פעולות
             const actionsCell = document.createElement('td');
             actionsCell.className = 'actions';
 
-            // כפתור "הצג" להצגת הפריט
+            // כפתור "הצג"
             const viewButton = document.createElement('button');
             viewButton.textContent = 'הצג';
             viewButton.className = 'view';
-            viewButton.addEventListener('click', () => viewItem(item)); // קריאה לפונקציה שמציגה את הפריט
+            viewButton.addEventListener('click', () => viewItem(item));
             actionsCell.appendChild(viewButton);
 
-            // כפתור "ערוך" לעריכת הפריט
+            // כפתור "ערוך"
             const editButton = document.createElement('button');
             editButton.textContent = 'ערוך';
             editButton.className = 'edit';
-            editButton.addEventListener('click', () => editItem(index)); // קריאה לפונקציה שמעריכה את הפריט
+            editButton.addEventListener('click', () => editItem(index, item));
             actionsCell.appendChild(editButton);
 
-            // כפתור "מחק" למחיקת הפריט
+            // כפתור "מחק"
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'מחק';
             deleteButton.className = 'delete';
-            deleteButton.addEventListener('click', () => deleteItem(index)); // קריאה לפונקציה שמוחקת את הפריט
+            deleteButton.addEventListener('click', () => deleteItem(index));
             actionsCell.appendChild(deleteButton);
 
-            row.appendChild(actionsCell); // הוספת תא הפעולות לשורה
-
-            tableBody.appendChild(row); // הוספת השורה לטבלה
+            row.appendChild(actionsCell);
+            tableBody.appendChild(row);
         });
     }
 
-    // פונקציה להצגת פריט בתצוגה מקדימה
     function viewItem(item) {
-        const previewSection = document.querySelector('#preview'); // בחירת אזור התצוגה המקדימה
-        previewSection.innerHTML = ''; // ניקוי התוכן הקיים בתצוגה המקדימה
+        const previewSection = document.querySelector('#preview');
+        previewSection.innerHTML = ''; // ניקוי התוכן הקיים
 
         const previewContent = document.createElement('div');
         previewContent.className = 'preview-content';
-        
-        if (item.type === 'banner' || item.type === 'marketing') { // הצגת פריטי באנר ושיווק
+
+        if (item.type === 'banner' || item.type === 'marketing') {
             if (item.image) {
                 const img = document.createElement('img');
                 img.src = item.image;
                 img.alt = 'Image';
-                img.className = 'preview-image'; // הוספת מחלקה לעיצוב התמונה
+                img.className = 'preview-image';
                 previewContent.appendChild(img);
             }
             const title = document.createElement('h1');
-            title.textContent = item.title; // הוספת הכותרת לתצוגה המקדימה
+            title.textContent = item.title;
             previewContent.appendChild(title);
-        } else if (item.type === 'landingPage') { // הצגת פריטי דף נחיתה
+        } else if (item.type === 'landingPage') {
             const title = document.createElement('h1');
             title.textContent = item.title;
             const subtitle = document.createElement('h2');
-            subtitle.textContent = item.subtitle || 'No subtitle available'; // הצגת כותרת משנה אם קיימת
+            subtitle.textContent = item.subtitle || 'No subtitle available';
             const content = document.createElement('p');
-            content.textContent = item.content || 'No content available'; // הצגת התוכן אם קיים
+            content.textContent = item.content || 'No content available';
             const cta = document.createElement('a');
-            cta.href = item.ctaLink || '#'; // קישור לקריאה לפעולה
+            cta.href = item.ctaLink || '#';
             cta.textContent = item.ctaText || 'No CTA text';
             cta.className = 'cta-link';
 
@@ -111,42 +106,104 @@ document.addEventListener('DOMContentLoaded', function() {
             previewContent.appendChild(content);
             previewContent.appendChild(cta);
         }
-        
-        previewSection.appendChild(previewContent); // הוספת התוכן לתצוגה המקדימה
+
+        previewSection.appendChild(previewContent);
     }
 
     // פונקציה לעריכת פריט
-    function editItem(index) {
-        alert(`Editing item at index ${index}`); // הודעה על עריכה, ניתן להרחיב כאן את הפונקציונליות לפי הצורך
+    function editItem(index, item) {
+        // הצגת טופס עריכה עם ערכים קיימים
+        const editSection = document.createElement('div');
+        editSection.className = 'edit-section';
+
+        editSection.innerHTML = `
+            <h2>ערוך פריט</h2>
+            <form id="editForm">
+                <label for="editTitle">כותרת:</label>
+                <input type="text" id="editTitle" value="${item.title}" required>
+
+                <label for="editContent">תוכן:</label>
+                <textarea id="editContent">${item.content || ''}</textarea>
+
+                <label for="editImage">תמונה:</label>
+                <input type="file" id="editImage" accept="image/*">
+
+                <button type="submit">שמור</button>
+                <button type="button" id="cancelEdit">ביטול</button>
+            </form>
+        `;
+
+        document.body.appendChild(editSection);
+
+        // שמירת שינויים
+        document.querySelector('#editForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            item.title = document.querySelector('#editTitle').value;
+            item.content = document.querySelector('#editContent').value;
+
+            const imageInput = document.querySelector('#editImage');
+            if (imageInput.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    item.image = e.target.result; // שמירת התמונה החדשה בקידוד Base64
+                    saveChanges(index, item, editSection);
+                };
+                reader.readAsDataURL(imageInput.files[0]);
+            } else {
+                saveChanges(index, item, editSection);
+            }
+        });
+
+        // ביטול עריכה
+        document.querySelector('#cancelEdit').addEventListener('click', function () {
+            document.body.removeChild(editSection);
+        });
     }
 
-    // פונקציה למחיקת פריט
+    function saveChanges(index, item, editSection) {
+        let items = JSON.parse(localStorage.getItem('items')) || [];
+        items[index] = item; // עדכון הפריט במיקום המתאים
+        localStorage.setItem('items', JSON.stringify(items));
+
+        alert('השינויים נשמרו בהצלחה!');
+        document.body.removeChild(editSection); // הסרת טופס העריכה
+        loadItems(); // רענון הטבלה
+    }
+
     function deleteItem(index) {
-        if (confirm('האם אתה בטוח שברצונך למחוק את הפריט הזה?')) { // הודעה לווידוא מחיקה
+        if (confirm('האם אתה בטוח שברצונך למחוק את הפריט הזה?')) {
             let items = JSON.parse(localStorage.getItem('items')) || [];
-            items.splice(index, 1); // מחיקת הפריט מהמיקום המתאים במערך
-            localStorage.setItem('items', JSON.stringify(items)); // שמירת המערך המעודכן ב-localStorage
-            loadItems(); // רענון הטבלה לאחר מחיקת הפריט
+            items.splice(index, 1);
+            localStorage.setItem('items', JSON.stringify(items));
+            clearPreviewIfNoItems(); // פונקציה לניקוי תצוגה אם אין פריטים
+            loadItems(); // רענון הטבלה
+        }
+    }
+
+    // ניקוי התצוגה המקדימה אם אין פריטים להצגה
+    function clearPreviewIfNoItems() {
+        const items = JSON.parse(localStorage.getItem('items')) || [];
+        if (items.length === 0) {
+            const previewSection = document.querySelector('#preview');
+            previewSection.innerHTML = ''; // ניקוי התצוגה המקדימה אם אין פריטים
         }
     }
 
     // הדגשת הקישור הנוכחי בתפריט הניווט
-    const currentPage = window.location.pathname.split('/').pop(); // השגת שם העמוד הנוכחי מהכתובת
-    const links = document.querySelectorAll('.menu a'); // בחירת כל הקישורים בתפריט
+    const currentPage = window.location.pathname.split('/').pop();
+    const links = document.querySelectorAll('.menu a');
     links.forEach(link => {
-        if (link.getAttribute('href') === currentPage) { // בדיקה אם הקישור מתאים לעמוד הנוכחי
-            link.classList.add('active'); // הוספת מחלקה 'active' לקישור המתאים
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
         }
     });
 
-    // פונקציונליות של תפריט המבורגר
-    const menuBtn = document.querySelector('.menu-btn'); // בחירת כפתור ההמבורגר
-    const menu = document.querySelector('.menu'); // בחירת התפריט
+    // תפריט המבורגר
+    const menuBtn = document.querySelector('.menu-btn');
+    const menu = document.querySelector('.menu');
 
-    // בדיקה אם הכפתור והתפריט קיימים בדף
-    if (menuBtn && menu) {
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('open'); // פתיחת וסגירת התפריט בעת לחיצה על כפתור ההמבורגר
-        });
-    }
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+    });
 });
