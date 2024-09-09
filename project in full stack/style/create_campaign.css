@@ -40,7 +40,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-   color: #FFD700; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
+   color: black; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
    text-decoration: underline;
 }
 
@@ -156,7 +156,7 @@ table th {
 }
 
 .actions .edit {
-   background-color: #ffc107; /* צבע צהוב */
+   background-color: black; /* צבע צהוב */
    color: black;
 }
 

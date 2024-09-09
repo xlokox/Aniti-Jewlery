@@ -41,7 +41,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-   color: #FFD700; /* צבע זהב בעת ריחוף */
+   color: black; /* צבע זהב בעת ריחוף */
 }
 
 /* עיצוב תוכן עיקרי */

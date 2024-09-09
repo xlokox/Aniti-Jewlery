@@ -37,7 +37,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-   color: #FFD700; /* צבע זהב להדגשה */
+   color: black; /* צבע זהב להדגשה */
    text-decoration: underline; /* קו תחתון בעת ריחוף על הקישורים */
 }
 

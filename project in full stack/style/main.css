@@ -35,7 +35,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-   color: #FFD700; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
+   color: black; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
 }
 
 /* עיצוב תוכן העמוד */
@@ -106,7 +106,7 @@ th {
 }
 
 .edit {
-   background-color: #ffc107; /* צבע צהוב */
+   background-color: black; /* צבע צהוב */
    color: black;
 }
 
@@ -148,7 +148,7 @@ th {
 /* עיצוב קישור פעיל */
 .active {
    font-weight: bold;
-   color: #FFD700; /* צבע זהב להדגשה */
+   color: black; /* צבע זהב להדגשה */
 }
 /* עיצוב כללי של התצוגה המקדימה */
 .preview {
@@ -191,7 +191,7 @@ th {
 }
 
 .cta-link:hover {
-   background-color: #0056b3; /* שינוי צבע בעת ריחוף */
+   background-color: black; /* שינוי צבע בעת ריחוף */
 }
 /* עיצוב רספונסיבי */
 @media (max-width: 768px) {
@@ -263,10 +263,7 @@ th {
    font-weight: bold;
 }
 
-.menu ul li a:hover,
-.menu ul li a.active {
-   background-color: #FFD700; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
-}
+
 
 /* עיצוב רספונסיבי - המסך קטן מ-768px */
 @media (max-width: 768px) {
