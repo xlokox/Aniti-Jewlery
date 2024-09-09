@@ -21,34 +21,33 @@ nav ul {
    list-style-type: none;
    padding: 0;
    margin: 0;
+   text-align: center;
 }
 
 nav ul li {
    display: inline;
-   margin: 0 20px; /* מרווח בין פריטים */
+   margin: 0 15px; /* מרווח בין פריטים */
 }
 
 nav ul li a {
    color: white;
    text-decoration: none;
    font-weight: bold;
-   transition: color 0.3s, text-decoration 0.3s; /* מעבר חלק לצבע וקו תחתון */
+   transition: color 0.3s; /* מעבר חלק לצבע */
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-   color: black; /* צבע זהב להדגשה */
-   text-decoration: underline; /* קו תחתון בעת ריחוף על הקישורים */
+nav ul li a:hover {
+   color: black; /* צבע שחור בעת ריחוף */
 }
 
 /* עיצוב תוכן העמוד */
 main {
    padding: 20px;
-   max-width: 900px; /* רוחב מקסימלי לפורם */
-   margin: 20px auto; /* ממרכז את התוכן במרכז העמוד */
-   background-color: white; /* צבע רקע לבן לתוכן */
-   border-radius: 8px; /* פינות מעוגלות לתוכן */
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת צל לתוכן */
+   max-width: 800px; /* רוחב מקסימלי לפורם */
+   margin: 20px auto;
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל מעט כהה יותר */
 }
 
 /* עיצוב כותרות */
@@ -124,4 +123,43 @@ table th {
    background-color: #007BFF; /* צבע כחול כהה לכותרות טבלה */
    color: white;
    font-weight: bold;
+}
+@media (max-width: 600px) {
+   .menu-btn {
+       display: block; /* הצגת כפתור ההמבורגר */
+   }
+
+   nav ul {
+       display: none; /* הסתרת התפריט הרגיל */
+       flex-direction: column;
+       background-color: #007BFF; /* צבע התפריט הנפתח */
+       position: absolute;
+       top: 50px;
+       right: 0;
+       width: 100%;
+       z-index: 10;
+   }
+   .menu.open {
+     display: flex; /* הצגת התפריט כאשר הוא פתוח */
+ }
+
+ nav ul li {
+     display: block;
+     margin-bottom: 10px; /* מרווח בין הפריטים בתפריט הנפתח */
+ }
+  
+}
+/* הצגת כפתור ההמבורגר והסתרת התפריט הרגיל במסכים קטנים */
+@media (max-width: 600px) {
+  .menu-btn {
+      display: block; /* הצגת כפתור ההמבורגר */
+  }
+
+  nav ul {
+      display: none; /* הסתרת התפריט הרגיל */
+  }
+
+  .menu.open {
+      display: flex; /* הצגת התפריט כאשר הוא פתוח */
+  }
 }
