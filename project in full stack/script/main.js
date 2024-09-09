@@ -138,3 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.classList.toggle('open');
     });
 });
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('open');
+}
