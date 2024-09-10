@@ -192,39 +192,3 @@ header h1 {
 }
 
 /* תפריט המבורגר רספונסיבי */
-@media (max-width: 768px) {
-   .hamburger-menu {
-       display: none;
-       flex-direction: column;
-       background-color: #007bff;
-       position: absolute;
-       top: 50px;
-       right: 0;
-       width: 100%;
-   }
-
-   .hamburger-menu.open {
-       display: flex;
-   }
-
-   .menu-btn {
-       display: block;
-   }
-
-   .menu-list {
-       flex-direction: column;
-       width: 100%;
-       padding: 0;
-   }
-
-   .menu-list li {
-       margin: 0;
-   }
-
-   .menu-list li a {
-       padding: 15px;
-       text-align: center;
-       width: 100%;
-       display: block;
-   }
-}
