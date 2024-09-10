@@ -1,75 +1,76 @@
-/* כלליים */
+/* עיצוב כלל גופי האתר */
 body {
    font-family: Arial, sans-serif;
    margin: 0;
    padding: 0;
-   line-height: 1.6;
-   background-color: #f9f9f9; /* צבע רקע אחיד לכל העמודים */
+   background-color: #f9f9f9;
 }
 
-/* כותרת עליונה */
+/* עיצוב הכותרת */
 header {
-   background-color: #007BFF; /* צבע כחול כהה */
+   background-color: #007BFF;
    color: white;
-   padding: 30px 0;
+   padding: 15px 0;
    text-align: center;
+}
+
+/* עיצוב תפריט הניווט */
+.navbar {
    position: relative;
+   display: flex;
+   justify-content: center;
 }
 
-header h1 {
-   margin: 0;
+.menu-btn {
+   display: none; /* מוסתר במסכים גדולים */
+   font-size: 24px;
+   color: white;
+   background: none;
+   border: none;
+   cursor: pointer;
+   position: absolute;
+   top: 15px;
+   right: 15px;
 }
 
-/* תפריט ניווט */
-.hamburger-menu nav {
+/* תפריט רגיל במסכים גדולים */
+.menu {
    display: flex;
    justify-content: center;
    align-items: center;
 }
 
-.hamburger-menu ul {
+.menu ul {
    list-style-type: none;
-   padding: 0;
+   display: flex;
    margin: 0;
-   display: flex; /* תצוגה בשורה */
+   padding: 0;
 }
 
-.hamburger-menu ul li {
-   margin-right: 20px; /* מרווח בין פריטים בתפריט */
+.menu ul li {
+   margin: 0 20px;
 }
 
-.hamburger-menu ul li a {
+.menu ul li a {
    color: white;
    text-decoration: none;
    font-weight: bold;
-   transition: color 0.3s ease; /* אנימציה רכה לשינוי צבע */
+   transition: color 0.3s ease;
 }
 
-.hamburger-menu ul li a:hover,
-.hamburger-menu ul li a.active {
-   color: black; /* צבע להדגשה בעת ריחוף או אם הקישור פעיל */
-   text-decoration: underline;
+.menu ul li a:hover,
+.menu ul li a.active {
+   color: black;
 }
 
-/* תפריט רספונסיבי */
+/* תפריט המבורגר רספונסיבי */
 @media (max-width: 768px) {
-   .hamburger-menu nav {
-       display: none; /* הסתרת התפריט הרגיל במסכים קטנים */
-   }
-
    .menu-btn {
-       display: block; /* הצגת כפתור ההמבורגר במסכים קטנים */
+       display: block; /* מוצג במסכים קטנים */
    }
 
-   .responsive-menu {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s ease-out; /* אנימציה חלקה לפתיחה וסגירה */
-   }
-
-   .responsive-menu.open {
-       max-height: 300px; /* גובה תפריט פתוח בהתאמה לתוכן */
-       display: flex;
+   .menu {
+       display: none; /* מוסתר כברירת מחדל במסכים קטנים */
        flex-direction: column;
        background-color: #007bff;
        position: absolute;
@@ -79,123 +80,71 @@ header h1 {
        z-index: 5;
    }
 
-   .responsive-menu ul {
-       flex-direction: column; /* פריטים בעמודה */
+   .menu.open {
+       display: flex; /* מוצג כאשר פתוח */
+   }
+
+   .menu ul {
+       flex-direction: column;
+       width: 100%;
        padding: 0;
-       margin: 0;
-       list-style: none;
    }
 
-   .responsive-menu ul li {
+   .menu ul li {
        margin: 0;
    }
 
-   .responsive-menu ul li a {
+   .menu ul li a {
        padding: 15px;
        text-align: center;
+       width: 100%;
        display: block;
-       color: white;
-       text-decoration: none;
-       font-weight: bold;
    }
 }
 
-/* אזור עיקרי */
+/* עיצוב תוכן העמוד */
 main {
    padding: 20px;
    max-width: 1000px;
    margin: 20px auto;
-   background-color: #ffffff; /* צבע רקע לבן לתוכן */
-   border-radius: 8px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל קל ומודגש */
-}
-
-/* עיצוב טפסים */
-form {
    background-color: #ffffff;
-   padding: 20px;
    border-radius: 8px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל קל */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-form label {
-   display: block;
-   margin-bottom: 5px;
-   font-weight: bold;
-}
-
-form input, form textarea, form select {
-   width: calc(100% - 16px); /* חישוב רוחב עם פדינג */
-   padding: 10px; /* הגדלת רווח פנימי */
-   margin-bottom: 15px;
-   border: 1px solid #ddd;
-   border-radius: 4px;
-   box-sizing: border-box;
-}
-
-form button {
-   background-color: #28a745; /* צבע ירוק כהה */
-   color: white;
-   border: none;
-   padding: 12px 20px;
-   border-radius: 4px;
-   cursor: pointer;
-   font-size: 16px; /* הגדלת גודל הפונט */
-   transition: background-color 0.3s ease; /* אנימציה רכה לשינוי צבע */
-}
-
-form button:hover {
-   background-color: #218838; /* צבע ירוק כהה יותר בעת ריחוף */
-}
-
-/* תצוגה מקדימה */
-#preview, #previewContent {
-   margin-top: 20px;
-   padding: 20px;
-   border-radius: 8px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל קל */
-   background-color: #ffffff; /* צבע רקע לבן */
-}
-
-/* כותרות */
+/* עיצוב כותרות */
 h1, h2 {
    margin-top: 0;
-   color: #333; /* צבע כהה לכותרות */
+   color: #333333;
 }
 
-/* טבלה */
+/* עיצוב הטבלה */
 table {
    width: 100%;
    border-collapse: collapse;
-   margin-top: 20px;
 }
 
-table th, table td {
+table, th, td {
    border: 1px solid #ddd;
+}
+
+th, td {
    padding: 12px;
    text-align: left;
 }
 
-table th {
-   background-color: #007BFF; /* צבע כחול כהה לכותרות טבלה */
+th {
+   background-color: #007BFF;
    color: white;
-   font-weight: bold;
 }
 
-/* עיצוב תמונות בתוכן */
+/* עיצוב התמונות בתוכן הטבלה */
 .table-image {
    width: 120px;
    height: auto;
 }
 
-.table-content {
-   max-width: 250px;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-}
-
-/* עיצוב כפתורים בפעולות */
+/* עיצוב כפתורים */
 .actions button {
    margin: 0 5px;
    padding: 8px 12px;
@@ -206,17 +155,55 @@ table th {
    transition: background-color 0.3s ease;
 }
 
-.actions .view {
-   background-color: #28a745; /* צבע ירוק כהה */
+.view {
+   background-color: #28a745;
    color: white;
 }
 
-.actions .edit {
-   background-color: black;
+.edit {
+   background-color: gold;
    color: white;
 }
 
-.actions .delete {
-   background-color: #dc3545; /* צבע אדום כהה */
+.delete {
+   background-color: #dc3545;
    color: white;
+}
+
+/* עיצוב תצוגה מקדימה */
+.preview-content {
+   padding: 20px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   background-color: #ffffff;
+}
+
+/* עיצוב תמונות בתצוגה מקדימה */
+.preview-image {
+   max-width: 100%;
+   height: auto;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+}
+
+/* עיצוב קישורים לקריאה לפעולה */
+.cta-link {
+   display: inline-block;
+   padding: 12px 18px;
+   background-color: #007BFF;
+   color: white;
+   text-decoration: none;
+   border-radius: 4px;
+   margin-top: 10px;
+   transition: background-color 0.3s ease;
+}
+
+.cta-link:hover {
+   background-color: #0056b3;
+}
+
+/* עיצוב קישור פעיל */
+.active {
+   font-weight: bold;
+   color: black;
 }
