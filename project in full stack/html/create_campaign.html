@@ -4,34 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>יצירת קמפיין</title>
-    <link rel="stylesheet" href="../style/create_campaign.css">
+    <link rel="stylesheet" href="/project in full stack/style/create_campaign.css">
 </head>
 <body>
-    <header>
-        <button class="menu-btn">&#9776;</button> <!-- כפתור ההמבורגר -->
-
-        <nav>
-            <ul>
-                <li><a href="/project in full stack/מיטרה פרוייקט/html/index.html">פרויקט מיטרה</a></li>
-                <li><a href="/project in full stack/html/main.html">דף הבית</a></li>
-                <li><a href="../html/banner_editor.html">עורך באנרים</a></li>
-                <li><a href="../html/marketing_editor.html">עורך דף שיווק</a></li>
-                <li><a href="../html/landing_page_editor.html">עורך דף נחיתה</a></li>
-                <li><a href="../html/create_campaign.html">צור קמפיין</a></li>
+    <!-- כפתור המבורגר חדש -->
+    <button class="campaign-menu-toggle-btn">&#9776;</button> <!-- כפתור ההמבורגר ייחודי לעמוד זה -->
+    <div class="campaign-responsive-menu"> <!-- תפריט המבורגר חדש -->
+        <nav class="campaign-nav">
+            <ul class="campaign-nav-list">
+                <li class="campaign-nav-item"><a href="/project in full stack/מיטרה פרוייקט/html/index.html">פרויקט מיטרה</a></li>
+                <li class="campaign-nav-item"><a href="/project in full stack/html/main.html">דף הבית</a></li>
+                <li class="campaign-nav-item"><a href="../html/banner_editor.html">עורך באנרים</a></li>
+                <li class="campaign-nav-item"><a href="../html/marketing_editor.html">עורך דף שיווק</a></li>
+                <li class="campaign-nav-item"><a href="../html/landing_page_editor.html">עורך דף נחיתה</a></li>
+                <li class="campaign-nav-item"><a href="../html/create_campaign.html">צור קמפיין</a></li>
             </ul>
         </nav>
-    </header>
-    <main>
-        <h1>יצירת קמפיין חדש</h1>
-        <form id="campaignForm">
+    </div>
+    
+    <main class="campaign-main">
+        <h1 class="campaign-header">יצירת קמפיין חדש</h1>
+        <form id="campaignForm" class="campaign-form">
             <label for="title">כותרת קמפיין:</label>
-            <input type="text" id="title" required>
+            <input type="text" id="title" class="campaign-input" required>
             
             <label for="description">תיאור קמפיין:</label>
-            <textarea id="description" required></textarea>
+            <textarea id="description" class="campaign-textarea" required></textarea>
             
             <label for="category">קטגוריה:</label>
-            <select id="category" required>
+            <select id="category" class="campaign-select" required>
                 <option value="banner">באנר</option>
                 <option value="project">פרויקט</option>
                 <option value="marketing">דף שיווקי</option>
@@ -39,13 +40,13 @@
             </select>
             
             <label for="imageUpload">בחר תמונה:</label>
-            <input type="file" id="imageUpload" accept="image/*" required>
+            <input type="file" id="imageUpload" class="campaign-file-input" accept="image/*" required>
             
-            <button type="submit">שמור קמפיין</button>
+            <button type="submit" class="campaign-submit-btn">שמור קמפיין</button>
         </form>
 
-        <h2>קמפיינים קיימים</h2>
-        <table id="campaignTable">
+        <h2 class="campaign-existing-header">קמפיינים קיימים</h2>
+        <table id="campaignTable" class="campaign-table">
             <thead>
                 <tr>
                     <th>קטגוריה</th>

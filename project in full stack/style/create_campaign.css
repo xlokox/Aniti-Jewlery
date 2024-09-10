@@ -11,23 +11,44 @@ body {
 header {
    background-color: #007BFF; /* צבע כחול כהה */
    color: white;
-   padding: 15px 0;
+   padding: 30px 0;
    text-align: center;
+   position: relative;
 }
 
 header h1 {
    margin: 0;
 }
 
+/* כפתור ההמבורגר */
+.menu-btn {
+   display: none; /* מוסתר במסכים גדולים */
+   font-size: 24px;
+   color: white;
+   background: none;
+   border: none;
+   cursor: pointer;
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   z-index: 10;
+}
+
 /* תפריט ניווט */
+nav {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
 nav ul {
    list-style-type: none;
    padding: 0;
    margin: 0;
+   display: flex; /* תצוגה בשורה */
 }
 
 nav ul li {
-   display: inline;
    margin-right: 20px; /* מרווח בין פריטים בתפריט */
 }
 
@@ -42,6 +63,55 @@ nav ul li a:hover,
 nav ul li a.active {
    color: black; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
    text-decoration: underline;
+}
+
+/* תפריט רספונסיבי */
+@media (max-width: 768px) {
+   nav {
+       display: none; /* הסתרת התפריט הרגיל במסכים קטנים */
+   }
+
+   .menu-btn {
+       display: block; /* הצגת כפתור ההמבורגר במסכים קטנים */
+   }
+
+   .responsive-menu {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease-out; /* אנימציה חלקה לפתיחה וסגירה */
+   }
+
+   .responsive-menu.open {
+       max-height: 300px; /* גובה תפריט פתוח בהתאמה לתוכן */
+       display: flex;
+       flex-direction: column;
+       background-color: #007bff;
+       position: absolute;
+       top: 50px;
+       right: 0;
+       width: 100%;
+       z-index: 5;
+   }
+
+   .responsive-menu ul {
+       flex-direction: column; /* פריטים בעמודה */
+       padding: 0;
+       margin: 0;
+       list-style: none;
+   }
+
+   .responsive-menu ul li {
+       margin: 0;
+   }
+
+   .responsive-menu ul li a {
+       padding: 15px;
+       text-align: center;
+       display: block;
+       color: white;
+       text-decoration: none;
+       font-weight: bold;
+   }
 }
 
 /* אזור עיקרי */
@@ -156,8 +226,8 @@ table th {
 }
 
 .actions .edit {
-   background-color: black; /* צבע צהוב */
-   color: black;
+   background-color: black;
+   color: white;
 }
 
 .actions .delete {
