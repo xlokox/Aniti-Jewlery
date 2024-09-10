@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
  
             // Redirect to the main page after a short delay
             setTimeout(() => {
-                window.location.href = '/html/main.html'; // Change to your main page URL
+                window.location.href = '../html/main.html'; // Change to your main page URL
             }, 2000); // 2000 milliseconds = 2 seconds
         } else {
             errorMessage.textContent = 'שם המשתמש או הסיסמה אינם נכונים';

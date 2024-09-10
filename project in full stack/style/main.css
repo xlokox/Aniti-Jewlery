@@ -20,6 +20,7 @@ header {
    display: flex;
    justify-content: center;
 }
+
 .menu-btn {
    display: none; /* מוסתר במסכים גדולים */
    font-size: 24px;
@@ -46,7 +47,6 @@ header {
    padding: 0;
 }
 
-
 .menu ul li {
    margin: 0 20px;
 }
@@ -57,26 +57,65 @@ header {
    font-weight: bold;
    transition: color 0.3s ease;
 }
+
 .menu ul li a:hover,
 .menu ul li a.active {
    color: black;
 }
 
+/* תפריט המבורגר רספונסיבי */
+@media (max-width: 768px) {
+   .menu-btn {
+       display: block; /* מוצג במסכים קטנים */
+   }
+
+   .menu {
+       display: none; /* מוסתר כברירת מחדל במסכים קטנים */
+       flex-direction: column;
+       background-color: #007bff;
+       position: absolute;
+       top: 50px;
+       right: 0;
+       width: 100%;
+       z-index: 5;
+   }
+
+   .menu.open {
+       display: flex; /* מוצג כאשר פתוח */
+   }
+
+   .menu ul {
+       flex-direction: column;
+       width: 100%;
+       padding: 0;
+   }
+
+   .menu ul li {
+       margin: 0;
+   }
+
+   .menu ul li a {
+       padding: 15px;
+       text-align: center;
+       width: 100%;
+       display: block;
+   }
+}
 
 /* עיצוב תוכן העמוד */
 main {
    padding: 20px;
    max-width: 1000px;
    margin: 20px auto;
-   background-color: #ffffff; /* צבע רקע לבן לתוכן */
+   background-color: #ffffff;
    border-radius: 8px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל קל ומודגש יותר */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* עיצוב כותרות */
 h1, h2 {
    margin-top: 0;
-   color: #333333; /* צבע כהה לכותרות */
+   color: #333333;
 }
 
 /* עיצוב הטבלה */
@@ -95,22 +134,14 @@ th, td {
 }
 
 th {
-   background-color: #007BFF; /* צבע כחול בהיר לכותרות טבלה */
+   background-color: #007BFF;
    color: white;
 }
 
 /* עיצוב התמונות בתוכן הטבלה */
 .table-image {
-   width: 120px; /* רוחב מוגדל לתמונות */
+   width: 120px;
    height: auto;
-}
-
-/* עיצוב תוכן הטבלה */
-.table-content {
-   max-width: 250px; /* רוחב מקסימלי מוגדל */
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
 }
 
 /* עיצוב כפתורים */
@@ -121,22 +152,21 @@ th {
    border-radius: 4px;
    cursor: pointer;
    font-size: 14px;
-   transition: background-color 0.3s ease; /* אנימציה רכה לשינוי צבע */
+   transition: background-color 0.3s ease;
 }
 
-/* עיצוב כפתורים פעולות */
 .view {
-   background-color: #28a745; /* צבע ירוק כהה */
+   background-color: #28a745;
    color: white;
 }
 
 .edit {
-   background-color: gold; /* צבע צהוב */
+   background-color: gold;
    color: white;
 }
 
 .delete {
-   background-color: #dc3545; /* צבע אדום כהה */
+   background-color: #dc3545;
    color: white;
 }
 
@@ -152,28 +182,28 @@ th {
 .preview-image {
    max-width: 100%;
    height: auto;
-   border: 1px solid #ddd; /* מסגרת מסביב לתמונה */
-   border-radius: 4px; /* פינות מעוגלות לתמונה */
+   border: 1px solid #ddd;
+   border-radius: 4px;
 }
 
 /* עיצוב קישורים לקריאה לפעולה */
 .cta-link {
    display: inline-block;
    padding: 12px 18px;
-   background-color: #007BFF; /* צבע כחול כהה */
+   background-color: #007BFF;
    color: white;
    text-decoration: none;
    border-radius: 4px;
    margin-top: 10px;
-   transition: background-color 0.3s ease; /* אנימציה רכה לשינוי צבע */
+   transition: background-color 0.3s ease;
 }
 
 .cta-link:hover {
-   background-color: #0056b3; /* צבע כחול כהה יותר בעת ריחוף */
+   background-color: #0056b3;
 }
 
 /* עיצוב קישור פעיל */
 .active {
    font-weight: bold;
-   color: black; /* צבע להדגשה */
+   color: black;
 }

@@ -1,28 +1,29 @@
-/* עיצוב כלל גופי האתר */
+/* כלליים */
 body {
    font-family: Arial, sans-serif;
    margin: 0;
    padding: 0;
+   line-height: 1.6;
    background-color: #f9f9f9;
 }
 
-/* עיצוב הכותרת */
+/* כותרת עליונה */
 header {
-   background-color: #007BFF;
+   background-color: #007BFF; /* צבע כחול כהה */
    color: white;
-   padding: 15px 0;
+   padding: 20px 0;
    text-align: center;
 }
 
-/* עיצוב תפריט הניווט */
-.navbar {
-   position: relative;
-   display: flex;
-   justify-content: center;
+header h1 {
+   margin: 0;
+   font-size: 24px;
+   font-weight: bold;
 }
 
-.menu-btn {
-   display: none; /* מוסתר במסכים גדולים */
+/* כפתור המבורגר ייחודי */
+.campaign-menu-toggle-btn {
+   display: none;
    font-size: 24px;
    color: white;
    background: none;
@@ -31,79 +32,75 @@ header {
    position: absolute;
    top: 15px;
    right: 15px;
+   z-index: 10;
 }
 
-/* תפריט רגיל במסכים גדולים */
-.menu {
+/* תפריט המבורגר */
+.campaign-responsive-menu {
+   display: none;
+   flex-direction: column;
+   background-color: #007bff;
+   position: absolute;
+   top: 50px;
+   right: 0;
+   width: 100%;
+   z-index: 5;
+}
+
+.campaign-responsive-menu.open {
+   display: flex;
+}
+
+/* תפריט ניווט */
+.campaign-nav {
    display: flex;
    justify-content: center;
    align-items: center;
+   padding: 10px 0;
 }
 
-.menu ul {
+.campaign-nav-list {
    list-style-type: none;
-   display: flex;
-   margin: 0;
    padding: 0;
+   margin: 0;
+   display: flex;
 }
 
-.menu ul li {
-   margin: 0 20px;
+.campaign-nav-item {
+   margin-left: 20px;
 }
 
-.menu ul li a {
+.campaign-nav-item a {
    color: white;
    text-decoration: none;
    font-weight: bold;
    transition: color 0.3s ease;
 }
 
-.menu ul li a:hover,
-.menu ul li a.active {
+.campaign-nav-item a:hover,
+.campaign-nav-item a.active {
    color: black;
+   text-decoration: underline;
 }
 
 /* תפריט המבורגר רספונסיבי */
 @media (max-width: 768px) {
-   .menu-btn {
-       display: block; /* מוצג במסכים קטנים */
+   .campaign-nav {
+       display: none;
    }
 
-   .menu {
-       display: none; /* מוסתר כברירת מחדל במסכים קטנים */
-       flex-direction: column;
-       background-color: #007bff;
-       position: absolute;
-       top: 50px;
-       right: 0;
-       width: 100%;
-       z-index: 5;
-   }
-
-   .menu.open {
-       display: flex; /* מוצג כאשר פתוח */
-   }
-
-   .menu ul {
-       flex-direction: column;
-       width: 100%;
-       padding: 0;
-   }
-
-   .menu ul li {
-       margin: 0;
-   }
-
-   .menu ul li a {
-       padding: 15px;
-       text-align: center;
-       width: 100%;
+   .campaign-menu-toggle-btn {
        display: block;
+   }
+
+   .campaign-responsive-menu.open {
+       max-height: 300px;
+       overflow: hidden;
    }
 }
 
-/* עיצוב תוכן העמוד */
-main {
+/* אזור עיקרי */
+.campaign-main {
    padding: 20px;
    max-width: 1000px;
    margin: 20px auto;
@@ -112,98 +109,59 @@ main {
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* עיצוב כותרות */
-h1, h2 {
-   margin-top: 0;
-   color: #333333;
+/* עיצוב טפסים */
+.campaign-form {
+   background-color: #ffffff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* עיצוב הטבלה */
-table {
+.campaign-form label {
+   display: block;
+   margin-bottom: 5px;
+   font-weight: bold;
+}
+
+.campaign-input, .campaign-textarea, .campaign-select, .campaign-file-input {
+   width: calc(100% - 16px);
+   padding: 10px;
+   margin-bottom: 15px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
+.campaign-submit-btn {
+   background-color: #28a745;
+   color: white;
+   border: none;
+   padding: 12px 20px;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background-color 0.3s ease;
+}
+
+.campaign-submit-btn:hover {
+   background-color: #218838;
+}
+
+/* טבלה */
+.campaign-table {
    width: 100%;
    border-collapse: collapse;
+   margin-top: 20px;
 }
 
-table, th, td {
+.campaign-table th, .campaign-table td {
    border: 1px solid #ddd;
-}
-
-th, td {
    padding: 12px;
    text-align: left;
 }
 
-th {
+.campaign-table th {
    background-color: #007BFF;
    color: white;
-}
-
-/* עיצוב התמונות בתוכן הטבלה */
-.table-image {
-   width: 120px;
-   height: auto;
-}
-
-/* עיצוב כפתורים */
-.actions button {
-   margin: 0 5px;
-   padding: 8px 12px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-   font-size: 14px;
-   transition: background-color 0.3s ease;
-}
-
-.view {
-   background-color: #28a745;
-   color: white;
-}
-
-.edit {
-   background-color: gold;
-   color: white;
-}
-
-.delete {
-   background-color: #dc3545;
-   color: white;
-}
-
-/* עיצוב תצוגה מקדימה */
-.preview-content {
-   padding: 20px;
-   border: 1px solid #ddd;
-   border-radius: 4px;
-   background-color: #ffffff;
-}
-
-/* עיצוב תמונות בתצוגה מקדימה */
-.preview-image {
-   max-width: 100%;
-   height: auto;
-   border: 1px solid #ddd;
-   border-radius: 4px;
-}
-
-/* עיצוב קישורים לקריאה לפעולה */
-.cta-link {
-   display: inline-block;
-   padding: 12px 18px;
-   background-color: #007BFF;
-   color: white;
-   text-decoration: none;
-   border-radius: 4px;
-   margin-top: 10px;
-   transition: background-color 0.3s ease;
-}
-
-.cta-link:hover {
-   background-color: #0056b3;
-}
-
-/* עיצוב קישור פעיל */
-.active {
    font-weight: bold;
-   color: black;
 }
