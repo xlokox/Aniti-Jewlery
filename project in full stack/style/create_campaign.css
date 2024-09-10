@@ -20,54 +20,40 @@ header h1 {
    margin: 0;
 }
 
-/* כפתור ההמבורגר */
-.menu-btn {
-   display: none; /* מוסתר במסכים גדולים */
-   font-size: 24px;
-   color: white;
-   background: none;
-   border: none;
-   cursor: pointer;
-   position: absolute;
-   top: 15px;
-   right: 15px;
-   z-index: 10;
-}
-
 /* תפריט ניווט */
-nav {
+.hamburger-menu nav {
    display: flex;
    justify-content: center;
    align-items: center;
 }
 
-nav ul {
+.hamburger-menu ul {
    list-style-type: none;
    padding: 0;
    margin: 0;
    display: flex; /* תצוגה בשורה */
 }
 
-nav ul li {
+.hamburger-menu ul li {
    margin-right: 20px; /* מרווח בין פריטים בתפריט */
 }
 
-nav ul li a {
+.hamburger-menu ul li a {
    color: white;
    text-decoration: none;
    font-weight: bold;
    transition: color 0.3s ease; /* אנימציה רכה לשינוי צבע */
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-   color: black; /* צבע זהב להדגשה בעת ריחוף או אם הקישור פעיל */
+.hamburger-menu ul li a:hover,
+.hamburger-menu ul li a.active {
+   color: black; /* צבע להדגשה בעת ריחוף או אם הקישור פעיל */
    text-decoration: underline;
 }
 
 /* תפריט רספונסיבי */
 @media (max-width: 768px) {
-   nav {
+   .hamburger-menu nav {
        display: none; /* הסתרת התפריט הרגיל במסכים קטנים */
    }
 
